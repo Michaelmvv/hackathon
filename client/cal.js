@@ -6,6 +6,8 @@ Template.cal.events({
   "click #Update": function(e){
     e.preventDefault();
     var id = document.getElementById('sID').value;
+    var name = document.getElementById('name').value;
+
     var monday = {
       power: document.getElementById('MondayCheck').value,
       start: document.getElementById('mondayStart').value,
@@ -48,6 +50,7 @@ Template.cal.events({
       times.insert({
         sID: id,
         user:Meteor.userId(),
+        name: name,
         Monday:monday,
         Tuesday:Tuesday,
         Wednesday:Wednesday,

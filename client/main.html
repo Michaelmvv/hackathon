@@ -3,7 +3,7 @@
   <h1>Welcome to sprinkler project</h1>
   {{#if currentUser}}
 <li><a href="./cal">New Cal</a></li>
-<li><a href="./newcal">update cal</a></li>
+{{> Template.dynamic template="CalSelector"}}
   {{else}}
   <h1>YOU MUST SIGNUP OR LOGIN</h1>
   {{/if}}

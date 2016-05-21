@@ -1,0 +1,19 @@
+<template name="CalSelector">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each currentLocationsIteration}}
+        <tr class='table-row' data-id={{_id}}>
+          <td class="col-md-2">{{name}}</td>
+          <td class="col-md-2">{{sID}}</td>
+
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
