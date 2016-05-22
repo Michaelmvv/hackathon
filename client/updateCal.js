@@ -1,20 +1,18 @@
 Template.registerHelper("currentLocationsIteration", function() {
   result = [];
   //finds all locations by current user id
-  Times.find().forEach(function(i) {
+  Times.find({user: Meteor.userId()}).forEach(function(i) {
     result.push({
-      _id: i._id,
       sID: i.sID,
       name: i.name
-
     });
   });
   return result;
 });
 Template.CalSelector.events({
-  "click .table-row": function() {
-    var id = this.dataid;
-    var s = Times.findOne(id);
-    console.log(s);
+  "click .table-row": function(e) {
+    var id = $(e.target).closest('tr').data('name')
+    var s = Times.findOne({sID: id});
+    console.log(s);  
   }
 });
