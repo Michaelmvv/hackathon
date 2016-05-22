@@ -8,7 +8,7 @@ Template.cal.events({
     var id = document.getElementById('sID').value;
     var name = document.getElementById('name').value;
 
-    var monday = {
+    var Monday = {
       power: document.getElementById('MondayCheck').value,
       start: document.getElementById('mondayStart').value,
       end: document.getElementById('mondayEnd').value,
@@ -49,7 +49,7 @@ Template.cal.events({
         sID: id,
         user:Meteor.userId(),
         name: name,
-        Monday:monday,
+        Monday:Monday,
         Tuesday:Tuesday,
         Wednesday:Wednesday,
         Thursday:Thursday,

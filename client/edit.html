@@ -2,10 +2,10 @@
   {{> loginButtons}}
   <form class="" role="form">
     <div class="form-group form-inline">
-      <input type="text" id="sIDEdit" placeholder="ID" value={{CurrentData.sID}} >
+      <input type="text" id="sIDEdit" class="form-control" placeholder="ID" value={{CurrentData.sID}} >
     </div>
     <div class="form-group form-inline">
-      <input type="text" id="nameEdit" placeholder="Name" value={{CurrentData.name}} >
+      <input type="text" id="nameEdit" class="form-control" placeholder="Name" value={{CurrentData.name}} >
     </div>
     <div class="form-group form-inline">
       <input type="checkbox" id="MondayCheckEdit" value="{{CurrentData.monday.power}}">
@@ -70,7 +70,7 @@
       <input id="SundayEndEdit" class="timepicker control-label form-control" type="text">
     </div>
     <div class="form-group form inline">
-      <input type="button" id="UpdateEdit" value="submit">
+      <input type="button" id="UpdateEdit" value="Update" class="btn btn-default">
     </div>
   </form>
 </template>

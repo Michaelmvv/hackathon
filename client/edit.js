@@ -1,6 +1,6 @@
 
 Template.registerHelper("CurrentData", function(){
-return Times.findOne({sID:CurrentEdit});
+  return Times.findOne({sID:CurrentEdit});
 });
 
 
@@ -10,7 +10,7 @@ Template.edit.events({
     var id = document.getElementById('sIDEdit').value;
     var name = document.getElementById('nameEdit').value;
 
-    var monday = {
+    var Monday = {
       power: document.getElementById('MondayCheckEdit').value,
       start: document.getElementById('mondayStartEdit').value,
       end: document.getElementById('mondayEndEdit').value,
@@ -46,22 +46,21 @@ Template.edit.events({
       end: document.getElementById('SundayEndEdit').value,
     }
 
-    // if (Times.findOne({sID: id}) === undefined) {
-    //   times.insert({
-    //     sID: id,
-    //     user:Meteor.userId(),
-    //     name: name,
-    //     Monday:monday,
-    //     Tuesday:Tuesday,
-    //     Wednesday:Wednesday,
-    //     Thursday:Thursday,
-    //     Friday:Friday,
-    //     Saturday:Saturday,
-    //     Sunday:Sunday
-    //   });
-    // }else {
-    //   alert("That data id exists. YOU CANT USE IT!");
-    // }
-    // console.log(times.findOne({sID: id}));
-}
+    if (Times.findOne({sID: id}) != undefined) {
+      Times.update({sId:id}, {$set:{
+        sID: id,
+        name: name,
+        Monday:Monday,
+        Tuesday:Tuesday,
+        Wednesday:Wednesday,
+        Thursday:Thursday,
+        Friday:Friday,
+        Saturday:Saturday,
+        Sunday:Sunday
+      }});
+      Router.go("/");
+    }else {
+      alert("You cant create a new one here");
+    }
+  }
 });
