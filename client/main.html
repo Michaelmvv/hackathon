@@ -1,10 +1,16 @@
 <template name="main">
+
   {{> loginButtons}}
-  <h1>Welcome to sprinkler project</h1>
+  <div align="center">
+    <h1>Welcome to {{name}}</h1>
+  </div>
+
   {{#if currentUser}}
-<li><a href="./cal">New Cal</a></li>
-{{> CalSelector}}
+  <button id="MakeNew" class="btn btn-primary">New Cal</button>
+  {{> CalSelector}}
   {{else}}
-  <h1>YOU MUST SIGNUP OR LOGIN</h1>
+  <div align="center">
+    <h3>You need to sign up or sign in to use {{name}}</h3>
+  </div>
   {{/if}}
 </template>
