@@ -1,7 +1,7 @@
 Template.registerHelper("currentLocationsIteration", function() {
   result = [];
   //finds all locations by current user id
-  Times.find({user: Meteor.userId()}).forEach(function(i) {
+  Times.find({user:Meteor.userId()}).forEach(function(i) {
     result.push({
       sID: i.sID,
       name: i.name
@@ -12,7 +12,6 @@ Template.registerHelper("currentLocationsIteration", function() {
 Template.CalSelector.events({
   "click .table-row": function(e) {
     var id = $(e.target).closest('tr').data('name')
-    var s = Times.findOne({sID: id});
-    console.log(s);  
+    Router.go("/edit/"+id)
   }
 });

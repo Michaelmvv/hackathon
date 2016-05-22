@@ -44,10 +44,8 @@ Template.cal.events({
       end: document.getElementById('SundayEnd').value,
     }
 
-    if (times.findOne({sID: id}) != undefined) {
-
-    }else {
-      times.insert({
+    if (Times.findOne({sID: id}) === undefined) {
+      Times.insert({
         sID: id,
         user:Meteor.userId(),
         name: name,
@@ -59,6 +57,9 @@ Template.cal.events({
         Saturday:Saturday,
         Sunday:Sunday
       });
+      Router.go('/');
+    }else {
+      alert("That data id exists. YOU CANT USE IT!");
     }
     console.log(times.findOne({sID: id}));
 }
