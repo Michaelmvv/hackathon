@@ -11,37 +11,37 @@ Template.edit.events({
     var name = document.getElementById('nameEdit').value;
 
     var Monday = {
-      power: document.getElementById('MondayCheckEdit').value,
+      power: $('#MondayCheckEdit').is(':checked'),
       start: document.getElementById('mondayStartEdit').value,
       end: document.getElementById('mondayEndEdit').value,
     }
     var Tuesday = {
-      power: document.getElementById('TuesdayCheckEdit').value,
+      power: $('#TuesdayCheckEdit').is(':checked'),
       start: document.getElementById('TuesdayStartEdit').value,
       end: document.getElementById('TuesdayEndEdit').value,
     }
     var Wednesday = {
-      power: document.getElementById('WednesdayCheckEdit').value,
+      power: $('#WednesdayCheckEdit').is(':checked'),
       start: document.getElementById('WednesdayStartEdit').value,
       end: document.getElementById('WednesdayEndEdit').value,
     }
     var Thursday = {
-      power: document.getElementById('ThursdayCheckEdit').value,
+      power: $('#ThursdayCheckEdit').is(':checked'),
       start: document.getElementById('ThursdayStartEdit').value,
       end: document.getElementById('ThursdayEndEdit').value,
     }
     var Friday = {
-      power: document.getElementById('FridayCheckEdit').value,
+      power: $('#FridayCheckEdit').is(':checked'),
       start: document.getElementById('FridayStartEdit').value,
       end: document.getElementById('FridayEndEdit').value,
     }
     var Saturday = {
-      power: document.getElementById('SaturdayCheckEdit').value,
+      power: $('#SaturdayCheckEdit').is(':checked'),
       start: document.getElementById('SaturdayStartEdit').value,
       end: document.getElementById('SaturdayEndEdit').value,
     }
     var Sunday = {
-      power: document.getElementById('SundayCheckEdit').value,
+      power: $('#SundayCheckEdit').is(':checked'),
       start: document.getElementById('SundayStartEdit').value,
       end: document.getElementById('SundayEndEdit').value,
     }
